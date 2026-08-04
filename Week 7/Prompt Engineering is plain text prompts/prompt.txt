@@ -1,0 +1,14 @@
+Prompt 1:
+Write a Python program to check whether a number is prime.
+
+Prompt 2:
+Create a Java program to reverse a string.
+
+Prompt 3:
+Generate a C program to implement Binary Search.
+
+Prompt 4:
+Write a JavaScript function to validate an email.
+
+Prompt 5:
+Create a C# method to sort an integer array.

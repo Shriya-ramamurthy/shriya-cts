@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="https://unpkg.com/vue@3"></script>
+
+<title>Vue 3 Example</title>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<h2>Student List</h2>
+
+<input v-model="search" placeholder="Search">
+
+<ul>
+
+<li v-for="student in filteredStudents">
+
+{{student}}
+
+</li>
+
+</ul>
+
+</div>
+
+<script>
+
+Vue.createApp({
+
+data(){
+
+return{
+
+search:"",
+
+students:[
+"John",
+"David",
+"Alice",
+"Peter",
+"Rose"
+]
+
+}
+
+},
+
+computed:{
+
+filteredStudents(){
+
+return this.students.filter(student=>
+
+student.toLowerCase().includes(this.search.toLowerCase())
+
+);
+
+}
+
+}
+
+}).mount("#app");
+
+</script>
+
+</body>
+
+</html>
