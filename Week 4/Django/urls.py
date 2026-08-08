@@ -1,9 +1,10 @@
-from django import forms
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import ItemViewSet
 
-class StudentForm(forms.Form):
+router = DefaultRouter()
+router.register(r'items', ItemViewSet, basename='item')
 
-    name=forms.CharField()
-
-    age=forms.IntegerField()
-
-    email=forms.EmailField()
+urlpatterns = [
+    path('api/', include(router.urls)),
+]
