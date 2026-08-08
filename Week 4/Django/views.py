@@ -1,15 +1,8 @@
-class SimpleMiddleware:
-    
-    def __init__(self,get_response):
+from rest_framework import viewsets
+from .models import Item
+from .serializers import ItemSerializer
 
-        self.get_response=get_response
-
-    def __call__(self,request):
-
-        print("Before Request")
-
-        response=self.get_response(request)
-
-        print("After Response")
-
-        return response
+# ModelViewSet automatically handles Create, Read, Update, and Delete actions
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
